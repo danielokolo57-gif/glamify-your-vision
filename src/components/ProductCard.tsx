@@ -22,16 +22,15 @@ export function ProductCard({ product }: { product: Product }) {
       </Link>
       <div className="mt-4 flex items-start justify-between gap-3">
         <div className="min-w-0">
-          <h3 className="font-display text-xl text-foreground truncate">{product.name}</h3>
+          <h3 className="font-display text-xl text-ink truncate">{product.name}</h3>
           <p className="text-xs text-muted-foreground mt-0.5">{product.tagline} · {product.size}</p>
         </div>
-        <p className="font-medium tabular-nums shrink-0">${product.price}</p>
+        <p className="font-medium tabular-nums shrink-0 text-ink">${product.price}</p>
       </div>
       <Button
         type="button"
         onClick={() => add(product.id)}
-        variant="outline"
-        className="mt-4 rounded-full border-foreground/20 hover:bg-sage hover:text-primary-foreground hover:border-sage"
+        className="mt-4 rounded-full bg-ink text-cream hover:bg-ink/85"
       >
         Add to bag
       </Button>

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap");
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -33,56 +33,55 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
-  --color-sage: var(--sage);
-  --color-sage-light: var(--sage-light);
-  --color-sage-dark: var(--sage-dark);
+  --color-nude: var(--nude);
+  --color-nude-light: var(--nude-light);
+  --color-nude-dark: var(--nude-dark);
   --color-cream: var(--cream);
-  --color-amber-glass: var(--amber-glass);
-  --font-display: "Cormorant Garamond", Georgia, serif;
+  --color-ink: var(--ink);
+  --font-display: "Playfair Display", Georgia, serif;
   --font-sans: "Inter", system-ui, sans-serif;
 }
 
 :root {
-  --radius: 1.5rem;
+  --radius: 1.25rem;
 
-  /* Sage cosmetics palette — warm cream + sage green + deep forest */
-  --background: oklch(0.97 0.012 90);
-  --foreground: oklch(0.28 0.025 140);
+  /* Glowmuse palette — warm nude + ink black + cream */
+  --background: oklch(0.95 0.022 75);
+  --foreground: oklch(0.18 0.012 60);
 
-  --card: oklch(0.985 0.008 85);
-  --card-foreground: oklch(0.28 0.025 140);
+  --card: oklch(0.97 0.018 80);
+  --card-foreground: oklch(0.18 0.012 60);
 
-  --popover: oklch(0.985 0.008 85);
-  --popover-foreground: oklch(0.28 0.025 140);
+  --popover: oklch(0.97 0.018 80);
+  --popover-foreground: oklch(0.18 0.012 60);
 
-  --primary: oklch(0.55 0.045 145);
-  --primary-foreground: oklch(0.98 0.008 90);
+  --primary: oklch(0.18 0.012 60);
+  --primary-foreground: oklch(0.97 0.02 80);
 
-  --secondary: oklch(0.93 0.018 90);
-  --secondary-foreground: oklch(0.32 0.03 145);
+  --secondary: oklch(0.91 0.028 75);
+  --secondary-foreground: oklch(0.22 0.014 60);
 
-  --muted: oklch(0.94 0.012 85);
-  --muted-foreground: oklch(0.5 0.02 130);
+  --muted: oklch(0.92 0.022 78);
+  --muted-foreground: oklch(0.45 0.018 60);
 
-  --accent: oklch(0.88 0.03 130);
-  --accent-foreground: oklch(0.3 0.03 145);
+  --accent: oklch(0.88 0.035 70);
+  --accent-foreground: oklch(0.2 0.012 60);
 
   --destructive: oklch(0.55 0.18 25);
   --destructive-foreground: oklch(0.98 0.008 90);
 
-  --border: oklch(0.88 0.015 95);
-  --input: oklch(0.9 0.012 95);
-  --ring: oklch(0.55 0.045 145);
+  --border: oklch(0.85 0.022 75);
+  --input: oklch(0.88 0.02 75);
+  --ring: oklch(0.18 0.012 60);
 
-  --sage: oklch(0.65 0.05 145);
-  --sage-light: oklch(0.82 0.035 140);
-  --sage-dark: oklch(0.38 0.04 145);
-  --cream: oklch(0.97 0.012 90);
-  --amber-glass: oklch(0.45 0.12 60);
+  --nude: oklch(0.82 0.05 65);
+  --nude-light: oklch(0.9 0.035 70);
+  --nude-dark: oklch(0.62 0.06 55);
+  --cream: oklch(0.96 0.022 80);
+  --ink: oklch(0.13 0.008 60);
 
-  --shadow-soft: 0 20px 60px -20px oklch(0.4 0.04 100 / 0.18);
-  --shadow-product: 0 30px 80px -30px oklch(0.3 0.04 100 / 0.35);
-  --gradient-cream: linear-gradient(180deg, oklch(0.97 0.012 90), oklch(0.94 0.018 85));
+  --shadow-soft: 0 20px 60px -20px oklch(0.2 0.02 60 / 0.18);
+  --shadow-product: 0 30px 80px -30px oklch(0.15 0.02 60 / 0.35);
 }
 
 @layer base {
@@ -98,14 +97,13 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
-    font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
   }
 
   h1, h2, h3, h4 {
     font-family: var(--font-display);
-    font-weight: 400;
-    letter-spacing: -0.02em;
+    font-weight: 500;
+    letter-spacing: -0.015em;
   }
 }
 
@@ -113,17 +111,32 @@
   .font-display {
     font-family: var(--font-display);
   }
-  .text-sage {
-    color: var(--sage);
+  .text-nude {
+    color: var(--nude);
   }
-  .bg-sage {
-    background-color: var(--sage);
+  .bg-nude {
+    background-color: var(--nude);
   }
-  .bg-sage-light {
-    background-color: var(--sage-light);
+  .bg-nude-light {
+    background-color: var(--nude-light);
   }
-  .text-sage-dark {
-    color: var(--sage-dark);
+  .bg-nude-dark {
+    background-color: var(--nude-dark);
+  }
+  .text-nude-dark {
+    color: var(--nude-dark);
+  }
+  .bg-cream {
+    background-color: var(--cream);
+  }
+  .text-cream {
+    color: var(--cream);
+  }
+  .bg-ink {
+    background-color: var(--ink);
+  }
+  .text-ink {
+    color: var(--ink);
   }
   .shadow-soft {
     box-shadow: var(--shadow-soft);
@@ -132,9 +145,19 @@
     box-shadow: var(--shadow-product);
   }
 
+  /* Legacy aliases retained so older route files still compile */
+  .bg-sage { background-color: var(--ink); }
+  .bg-sage-dark { background-color: var(--ink); }
+  .bg-sage-light { background-color: var(--nude-light); }
+  .text-sage { color: var(--ink); }
+  .text-sage-dark { color: var(--nude-dark); }
+  .hover\:bg-sage:hover { background-color: var(--ink); }
+  .hover\:bg-sage-dark:hover { background-color: var(--nude-dark); }
+
   .giant-word {
     font-family: var(--font-display);
-    font-weight: 400;
+    font-weight: 500;
+    font-style: italic;
     line-height: 0.85;
     letter-spacing: -0.04em;
   }
