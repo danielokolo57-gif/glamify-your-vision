@@ -1,97 +1,103 @@
 import { Link } from "@tanstack/react-router";
-import { ShoppingBag, Search, Heart, Menu, X } from "lucide-react";
+import { ShoppingBag, Search, User, Phone, Menu, X, Heart } from "lucide-react";
 import { useState } from "react";
 import { useCart } from "@/contexts/CartContext";
 
 const navLinks = [
-  { to: "/", label: "Home" },
-  { to: "/skincare", label: "Eyes" },
-  { to: "/hair-body", label: "Lips" },
-  { to: "/catalog", label: "Face" },
-  { to: "/accessories", label: "Skin" },
-  { to: "/about", label: "Offers" },
-  { to: "/blog", label: "Blog" },
-  { to: "/contact", label: "Contact" },
+  { to: "/skincare", label: "Hair Cream" },
+  { to: "/catalog", label: "Face Primer" },
+  { to: "/accessories", label: "Makeup Brushes" },
+  { to: "/hair-body", label: "Perfumes" },
+  { to: "/skincare", label: "Skincare Cream" },
+  { to: "/catalog", label: "Makeup Lipstick" },
+  { to: "/about", label: "More" },
 ] as const;
 
-export function Header({ variant = "overlay" }: { variant?: "overlay" | "solid" }) {
+export function Header({ variant = "solid" }: { variant?: "overlay" | "solid" }) {
   const { count, setOpen } = useCart();
   const [mobileOpen, setMobileOpen] = useState(false);
-
-  const isOverlay = variant === "overlay";
+  void variant;
 
   return (
-    <header
-      className={
-        isOverlay
-          ? "absolute top-0 left-0 right-0 z-30"
-          : "sticky top-0 z-30 bg-background/95 backdrop-blur border-b border-border/60"
-      }
-    >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6">
-        <div
-          className={`flex items-center justify-between gap-3 rounded-full pl-5 pr-2 py-2 ${
-            isOverlay
-              ? "bg-cream/95 backdrop-blur border border-ink/10 shadow-soft"
-              : "bg-card border border-border"
-          }`}
-        >
-          <Link to="/" className="flex items-center gap-2 shrink-0" aria-label="Glowmuse home">
-            <span className="font-display italic text-2xl text-ink leading-none">Glowmuse</span>
+    <header className="sticky top-0 z-30 bg-background">
+      {/* Top utility bar */}
+      <div className="bg-wine text-cream/95 text-xs">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-10 flex items-center justify-between gap-4">
+          <div className="flex items-center gap-2">
+            <Phone className="h-3.5 w-3.5" />
+            <span className="hidden sm:inline">Customer Service:</span>
+            <span className="font-medium">(+91) 123-456-789</span>
+          </div>
+          <div className="hidden md:flex items-center gap-5">
+            <a href="#" className="hover:text-cream transition-colors">Track Order</a>
+            <a href="#" className="hover:text-cream transition-colors">Help</a>
+            <a href="#" className="hover:text-cream transition-colors">Sign In</a>
+          </div>
+        </div>
+      </div>
+
+      {/* Brand bar */}
+      <div className="border-b border-border/60 bg-background">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-20 flex items-center gap-4">
+          {/* Search */}
+          <div className="hidden md:flex flex-1 max-w-sm">
+            <div className="flex items-center w-full h-11 rounded-full border border-border bg-cream-soft pl-5 pr-2">
+              <input
+                type="text"
+                placeholder="Search products..."
+                className="flex-1 bg-transparent outline-none text-sm text-ink placeholder:text-muted-foreground"
+              />
+              <button
+                type="button"
+                className="h-8 w-8 rounded-full bg-wine text-cream flex items-center justify-center"
+                aria-label="Search"
+              >
+                <Search className="h-4 w-4" />
+              </button>
+            </div>
+          </div>
+
+          {/* Logo */}
+          <Link to="/" className="flex-1 flex items-center justify-center md:justify-center" aria-label="Belletny home">
+            <div className="flex items-center gap-2">
+              <span className="h-8 w-8 rounded-full bg-wine text-cream flex items-center justify-center font-display text-xl leading-none">
+                B
+              </span>
+              <span className="font-display italic text-3xl text-ink leading-none">Belletny</span>
+            </div>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.label}
-                to={link.to}
-                className="text-[13px] text-ink/70 hover:text-ink transition-colors"
-                activeProps={{ className: "text-ink font-medium underline underline-offset-[6px]" }}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-
-          <div className="flex items-center gap-1">
+          {/* Account & Cart */}
+          <div className="flex-1 flex items-center justify-end gap-1">
             <button
               type="button"
-              className="hidden sm:flex items-center justify-center h-9 w-9 rounded-full text-ink/80 hover:bg-ink/5"
-              aria-label="Search"
+              className="hidden sm:flex h-10 w-10 rounded-full items-center justify-center text-ink hover:bg-cream-soft"
+              aria-label="Account"
             >
-              <Search className="h-[17px] w-[17px]" />
+              <User className="h-5 w-5" />
             </button>
             <button
               type="button"
-              className="hidden sm:flex items-center justify-center h-9 w-9 rounded-full text-ink/80 hover:bg-ink/5"
+              className="hidden sm:flex h-10 w-10 rounded-full items-center justify-center text-ink hover:bg-cream-soft"
               aria-label="Wishlist"
             >
-              <Heart className="h-[17px] w-[17px]" />
+              <Heart className="h-5 w-5" />
             </button>
             <button
               type="button"
               onClick={() => setOpen(true)}
-              className="relative flex items-center justify-center h-9 w-9 rounded-full text-ink/80 hover:bg-ink/5"
+              className="relative flex h-10 w-10 rounded-full items-center justify-center text-ink hover:bg-cream-soft"
               aria-label={`Open cart, ${count} items`}
             >
-              <ShoppingBag className="h-[17px] w-[17px]" />
-              {count > 0 && (
-                <span className="absolute -top-0.5 -right-0.5 h-4 min-w-4 px-1 rounded-full bg-ink text-cream text-[10px] font-medium flex items-center justify-center">
-                  {count}
-                </span>
-              )}
+              <ShoppingBag className="h-5 w-5" />
+              <span className="absolute -top-0.5 -right-0.5 h-5 min-w-5 px-1 rounded-full bg-wine text-cream text-[10px] font-semibold flex items-center justify-center">
+                {count}
+              </span>
             </button>
-
-            <Link
-              to="/catalog"
-              className="hidden sm:inline-flex items-center justify-center rounded-full bg-ink text-cream text-sm h-10 px-5 ml-1 hover:bg-ink/90 transition-colors"
-            >
-              Buy now
-            </Link>
 
             <button
               type="button"
-              className="lg:hidden flex items-center justify-center h-10 w-10 rounded-full text-ink"
+              className="lg:hidden flex items-center justify-center h-10 w-10 rounded-full text-ink ml-1"
               onClick={() => setMobileOpen((o) => !o)}
               aria-label="Toggle menu"
             >
@@ -99,32 +105,53 @@ export function Header({ variant = "overlay" }: { variant?: "overlay" | "solid" 
             </button>
           </div>
         </div>
+      </div>
 
-        {mobileOpen && (
-          <div className="lg:hidden mt-3 rounded-3xl bg-cream border border-ink/10 p-3 shadow-soft">
+      {/* Category nav */}
+      <nav className="hidden lg:block border-b border-border/60 bg-background">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-12 flex items-center justify-center gap-10">
+          {navLinks.map((link, i) => (
+            <Link
+              key={`${link.label}-${i}`}
+              to={link.to}
+              className="text-sm text-ink/85 hover:text-wine transition-colors relative group"
+              activeProps={{ className: "text-wine font-medium" }}
+            >
+              {link.label}
+              <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 h-0.5 w-0 bg-wine transition-all group-hover:w-full" />
+            </Link>
+          ))}
+        </div>
+      </nav>
+
+      {/* Mobile menu */}
+      {mobileOpen && (
+        <div className="lg:hidden border-t border-border bg-background">
+          <div className="mx-auto max-w-7xl px-4 py-4">
+            <div className="flex items-center w-full h-11 rounded-full border border-border bg-cream-soft pl-5 pr-2 mb-3">
+              <input
+                type="text"
+                placeholder="Search products..."
+                className="flex-1 bg-transparent outline-none text-sm text-ink placeholder:text-muted-foreground"
+              />
+              <Search className="h-4 w-4 text-wine mr-2" />
+            </div>
             <nav className="flex flex-col">
-              {navLinks.map((link) => (
+              {navLinks.map((link, i) => (
                 <Link
-                  key={link.label}
+                  key={`m-${link.label}-${i}`}
                   to={link.to}
                   onClick={() => setMobileOpen(false)}
-                  className="px-4 py-3 rounded-2xl text-ink/85 hover:bg-ink/5 transition-colors"
-                  activeProps={{ className: "bg-ink/5 font-medium" }}
+                  className="px-4 py-3 rounded-lg text-ink/85 hover:bg-cream-soft transition-colors"
+                  activeProps={{ className: "bg-cream-soft font-medium text-wine" }}
                 >
                   {link.label}
                 </Link>
               ))}
-              <Link
-                to="/catalog"
-                onClick={() => setMobileOpen(false)}
-                className="mt-2 mx-2 mb-1 inline-flex items-center justify-center rounded-full bg-ink text-cream text-sm h-11 px-5"
-              >
-                Buy now
-              </Link>
             </nav>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </header>
   );
 }

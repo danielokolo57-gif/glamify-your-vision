@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import jar from "@/assets/glowmuse-cream.jpg";
+import jar from "@/assets/cat-facecream.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
