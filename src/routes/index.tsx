@@ -1,39 +1,53 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { Link } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ProductCard } from "@/components/ProductCard";
 import { Button } from "@/components/ui/button";
 import { products } from "@/lib/products";
-import heroEye from "@/assets/hero-eye.jpg";
-import jar from "@/assets/product-jar.jpg";
-import spray from "@/assets/product-spray.jpg";
-import pump from "@/assets/product-pump.jpg";
-import trio from "@/assets/product-trio.jpg";
-import collection from "@/assets/product-collection.jpg";
-import tubes from "@/assets/product-tubes.jpg";
+import { Sparkles, Clock, Leaf, ShieldCheck } from "lucide-react";
+import hero from "@/assets/glowmuse-hero.jpg";
+import foundation from "@/assets/glowmuse-foundation.jpg";
+import lips from "@/assets/glowmuse-lips.jpg";
+import cream from "@/assets/glowmuse-cream.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Sage — Conscious skincare & body care" },
+      { title: "Glowmuse — Unleash your inner radiance" },
       {
         name: "description",
         content:
-          "Sage is a new philosophy of selfcare. Thoughtful skincare and body formulas designed for healthy, balanced skin and hair — every day.",
+          "Glowmuse is effortless beauty: easy-to-apply, dermatologist-tested products that save time and let you feel like you. Skincare, makeup & essentials.",
       },
-      { property: "og:title", content: "Sage — Conscious skincare & body care" },
+      { property: "og:title", content: "Glowmuse — Unleash your inner radiance" },
       {
         property: "og:description",
-        content:
-          "A new philosophy of selfcare: thoughtful ingredients, soft textures, real everyday results.",
+        content: "Effortless beauty essentials for real mornings. Clean, fast, made for you.",
       },
-      { property: "og:image", content: heroEye },
-      { name: "twitter:image", content: heroEye },
+      { property: "og:image", content: hero },
+      { name: "twitter:image", content: hero },
     ],
   }),
   component: HomePage,
 });
+
+const features = [
+  {
+    icon: ShieldCheck,
+    title: "Safe, clean beauty",
+    body: "Tested by dermatologists",
+  },
+  {
+    icon: Clock,
+    title: "Fast & flawless",
+    body: "Makeup made for real mornings",
+  },
+  {
+    icon: Leaf,
+    title: "No animal testing — ever",
+    body: "Certified cruelty-free",
+  },
+];
 
 function HomePage() {
   return (
@@ -41,182 +55,176 @@ function HomePage() {
       <Header variant="overlay" />
 
       {/* Hero */}
-      <section className="relative h-[100svh] min-h-[640px] w-full overflow-hidden">
-        <img
-          src={heroEye}
-          alt="Close-up of glowing, healthy skin"
-          width={1920}
-          height={1080}
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-foreground/20 via-foreground/5 to-cream/95" />
-        <div className="relative h-full flex items-end justify-center pb-4 sm:pb-8">
-          <h1 className="giant-word text-cream text-[28vw] md:text-[26vw] lg:text-[24vw] select-none">
-            sage
-          </h1>
+      <section className="relative pt-28 sm:pt-32 lg:pt-36">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="relative rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden bg-nude-light">
+            <div className="grid lg:grid-cols-2">
+              {/* Left content */}
+              <div className="px-6 sm:px-10 lg:px-14 py-12 sm:py-16 lg:py-20 flex flex-col justify-center">
+                <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-ink leading-[1.02]">
+                  Unleash Your<br />
+                  <span className="italic">Inner Radiance</span>
+                </h1>
+                <p className="mt-6 max-w-md text-ink/65 leading-relaxed text-[15px]">
+                  Look effortlessly radiant with easy-to-apply products that
+                  save time and feel like you.
+                </p>
+                <div className="mt-8 flex flex-wrap items-center gap-3">
+                  <Button
+                    asChild
+                    className="rounded-full bg-ink text-cream hover:bg-ink/85 h-12 px-7 text-sm"
+                  >
+                    <Link to="/catalog">Shop Quick Beauty Kits</Link>
+                  </Button>
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="rounded-full border-ink/25 bg-transparent text-ink hover:bg-ink hover:text-cream h-12 px-7 text-sm"
+                  >
+                    <Link to="/blog">Watch a 2-Minute Tutorial</Link>
+                  </Button>
+                </div>
+
+                <div className="mt-12 grid sm:grid-cols-3 gap-6 max-w-xl">
+                  {features.map((f) => (
+                    <div key={f.title} className="flex flex-col gap-2">
+                      <div className="h-9 w-9 rounded-full bg-ink/5 flex items-center justify-center">
+                        <f.icon className="h-4 w-4 text-ink" />
+                      </div>
+                      <p className="text-[13px] leading-snug text-ink/75">
+                        <span className="font-medium text-ink">{f.title}.</span>{" "}
+                        {f.body}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right image */}
+              <div className="relative min-h-[420px] sm:min-h-[520px] lg:min-h-[640px]">
+                <img
+                  src={hero}
+                  alt="Glowmuse model with radiant skin and soft natural makeup"
+                  width={1280}
+                  height={1536}
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Philosophy */}
+      {/* Marquee strip */}
+      <section className="bg-background py-10 sm:py-14">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-ink/40">
+            {["VOGUE", "ELLE", "HARPER'S", "ALLURE", "BAZAAR", "BYRDIE"].map((m) => (
+              <span key={m} className="font-display italic text-2xl tracking-wide">
+                {m}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Categories */}
       <section className="bg-background">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-28 grid gap-12 lg:grid-cols-2 lg:items-center">
-          <div className="max-w-lg">
-            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl text-foreground leading-[1.05]">
-              New philosophy<br />of selfcare:<br />healthy skin & hair
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
+            <div>
+              <p className="text-xs uppercase tracking-[0.18em] text-ink/50">Shop by category</p>
+              <h2 className="mt-2 font-display text-4xl sm:text-5xl text-ink">
+                Find your <span className="italic">muse</span>
+              </h2>
+            </div>
+            <Link
+              to="/catalog"
+              className="text-sm underline underline-offset-4 text-ink/70 hover:text-ink"
+            >
+              View all products
+            </Link>
+          </div>
+          <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { img: foundation, label: "Skin", to: "/catalog" },
+              { img: lips, label: "Lips", to: "/hair-body" },
+              { img: cream, label: "Skincare", to: "/skincare" },
+            ].map((c) => (
+              <Link
+                key={c.label}
+                to={c.to}
+                className="group relative block aspect-[4/5] rounded-3xl overflow-hidden bg-secondary"
+              >
+                <img
+                  src={c.img}
+                  alt={c.label}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/0 to-transparent" />
+                <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between text-cream">
+                  <span className="font-display italic text-3xl">{c.label}</span>
+                  <span className="h-9 w-9 rounded-full bg-cream text-ink flex items-center justify-center text-lg">
+                    →
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Editorial split */}
+      <section className="bg-nude-light">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid gap-10 lg:grid-cols-2 lg:items-center">
+          <div className="rounded-3xl overflow-hidden aspect-[4/5] bg-background">
+            <img
+              src={cream}
+              alt="Glowmuse Inner Glow Cream open jar"
+              loading="lazy"
+              className="h-full w-full object-cover"
+            />
+          </div>
+          <div className="max-w-lg lg:pl-8">
+            <p className="text-xs uppercase tracking-[0.18em] text-ink/50">The philosophy</p>
+            <h2 className="mt-3 font-display text-4xl sm:text-5xl lg:text-6xl text-ink leading-[1.05]">
+              Beauty that <span className="italic">begins</span> with care.
             </h2>
-            <div className="mt-8 space-y-4 text-foreground/75 leading-relaxed">
-              <p>
-                Sage is about conscious simplicity — effective formulas, thoughtful
-                ingredients, and soft textures designed for real everyday life.
-              </p>
-              <p>
-                We believe skincare should support your skin, not overwhelm it,
-                combining modern science with a calm, minimal approach.
+            <p className="mt-6 text-ink/70 leading-relaxed">
+              We believe great makeup starts with great skin. Every Glowmuse
+              formula is built on a base of skincare-grade ingredients —
+              hydrating, soothing, and clinically tested for real results.
+            </p>
+            <div className="mt-8 flex items-center gap-4">
+              <Sparkles className="h-5 w-5 text-ink" />
+              <p className="text-sm text-ink/70">
+                Loved by 50,000+ muses worldwide.
               </p>
             </div>
             <Button
               asChild
-              className="mt-8 rounded-full bg-sage hover:bg-sage-dark text-primary-foreground h-12 px-7"
+              className="mt-8 rounded-full bg-ink text-cream hover:bg-ink/85 h-12 px-7"
             >
-              <Link to="/about">More about Sage</Link>
+              <Link to="/about">More about Glowmuse</Link>
             </Button>
           </div>
-
-          <div className="relative aspect-square max-w-md mx-auto w-full">
-            <img
-              src={jar}
-              alt="Sage Renewal Night Cream open jar"
-              loading="lazy"
-              width={1024}
-              height={1024}
-              className="absolute inset-0 h-full w-full object-contain float-slow"
-            />
-          </div>
         </div>
       </section>
 
-      {/* Pure care by nature */}
-      <section className="bg-background">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-20 grid gap-6 lg:grid-cols-3">
-          <Link
-            to="/product/$productId"
-            params={{ productId: "hydrating-mist" }}
-            className="block aspect-[3/4] rounded-3xl overflow-hidden bg-secondary group"
-          >
-            <img
-              src={spray}
-              alt="Hydrating Botanical Mist"
-              loading="lazy"
-              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-          </Link>
-          <Link
-            to="/product/$productId"
-            params={{ productId: "gentle-cleanser" }}
-            className="block aspect-[3/4] rounded-3xl overflow-hidden bg-secondary group"
-          >
-            <img
-              src={pump}
-              alt="Gentle Daily Cleanser"
-              loading="lazy"
-              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-          </Link>
-          <div className="flex flex-col justify-between">
-            <div>
-              <h2 className="font-display text-4xl sm:text-5xl text-foreground leading-tight">
-                Pure care<br />by nature
-              </h2>
-              <div className="mt-6 space-y-3 text-foreground/75 leading-relaxed text-[15px]">
-                <p>
-                  Thoughtfully crafted formulas designed to bring balance and calm
-                  to your daily routine.
-                </p>
-                <p>
-                  Lightweight textures, gentle ingredients, and a minimalist
-                  approach help support healthy-looking skin — effortlessly,
-                  every day.
-                </p>
-              </div>
-            </div>
-            <div className="mt-6 rounded-3xl overflow-hidden aspect-[16/10] bg-secondary">
-              <img
-                src={tubes}
-                alt="Sage hand and cuticle balm tubes"
-                loading="lazy"
-                className="h-full w-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* All-in-One with giant "new" */}
-      <section className="bg-background relative overflow-hidden">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-            <div className="max-w-md">
-              <h2 className="font-display text-4xl sm:text-5xl text-foreground leading-tight">
-                All-in-One<br />Skincare Complex
-              </h2>
-              <p className="mt-5 text-foreground/75 leading-relaxed text-[15px]">
-                Multifunctional line designed to simplify your daily routine
-                without compromising results.
-              </p>
-            </div>
-            <div className="rounded-3xl bg-accent/60 p-6 sm:p-10">
-              <img
-                src={trio}
-                alt="All-in-one skincare trio"
-                loading="lazy"
-                className="w-full h-auto object-contain"
-              />
-            </div>
-          </div>
-
-          <div
-            aria-hidden
-            className="giant-word text-sage-light/70 text-[36vw] md:text-[28vw] lg:text-[24vw] leading-none -mt-4 sm:-mt-12 lg:-mt-20 select-none pointer-events-none"
-          >
-            new
-          </div>
-
-          <div className="grid gap-8 lg:grid-cols-2 lg:items-center -mt-2 sm:-mt-10 lg:-mt-16 relative">
-            <div className="rounded-3xl overflow-hidden bg-secondary">
-              <img
-                src={collection}
-                alt="Sage complete skincare collection"
-                loading="lazy"
-                className="w-full h-auto object-cover"
-              />
-            </div>
-            <div className="max-w-md">
-              <p className="text-foreground/75 leading-relaxed text-[15px]">
-                Each formula combines hydration, barrier support, and skin-balancing
-                ingredients to work in one effortless step. The collection focuses
-                on smart minimalism — fewer products, more impact, and consistent
-                care for healthy-looking skin.
-              </p>
-              <Button
-                asChild
-                variant="outline"
-                className="mt-6 rounded-full border-foreground/30 hover:bg-foreground hover:text-background"
-              >
-                <Link to="/catalog">Catalog</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured products */}
+      {/* Bestsellers */}
       <section className="bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
           <div className="flex items-end justify-between mb-10">
-            <h2 className="font-display text-4xl sm:text-5xl text-foreground">Bestsellers</h2>
+            <div>
+              <p className="text-xs uppercase tracking-[0.18em] text-ink/50">Loved by all</p>
+              <h2 className="mt-2 font-display text-4xl sm:text-5xl text-ink">
+                Bestsellers
+              </h2>
+            </div>
             <Link
               to="/catalog"
-              className="hidden sm:inline text-sm underline underline-offset-4 text-foreground/70 hover:text-foreground"
+              className="hidden sm:inline text-sm underline underline-offset-4 text-ink/70 hover:text-ink"
             >
               View all
             </Link>
@@ -225,6 +233,38 @@ function HomePage() {
             {products.slice(0, 3).map((p) => (
               <ProductCard key={p.id} product={p} />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter */}
+      <section className="bg-background pb-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-3xl bg-ink text-cream px-6 sm:px-12 py-14 sm:py-20 text-center">
+            <p className="text-xs uppercase tracking-[0.18em] text-cream/50">Join the muse list</p>
+            <h2 className="mt-3 font-display text-4xl sm:text-5xl lg:text-6xl">
+              Beauty notes, <span className="italic">delivered.</span>
+            </h2>
+            <p className="mt-4 max-w-md mx-auto text-cream/70 text-sm leading-relaxed">
+              Tutorials, new launches, and 10% off your first order — straight to your inbox.
+            </p>
+            <form
+              className="mt-8 max-w-md mx-auto flex flex-col sm:flex-row gap-2"
+              onSubmit={(e) => e.preventDefault()}
+            >
+              <input
+                type="email"
+                required
+                placeholder="Your email"
+                className="flex-1 rounded-full bg-cream/10 border border-cream/20 px-5 h-12 text-sm text-cream placeholder:text-cream/50 focus:outline-none focus:border-cream/60"
+              />
+              <button
+                type="submit"
+                className="rounded-full bg-cream text-ink h-12 px-7 text-sm font-medium hover:bg-cream/90 transition-colors"
+              >
+                Subscribe
+              </button>
+            </form>
           </div>
         </div>
       </section>
