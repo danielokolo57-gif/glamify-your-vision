@@ -20,6 +20,13 @@ export const Route = createRootRoute({
       { name: "author", content: "Sage" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Sage — Conscious skincare & body care" },
+      { name: "twitter:title", content: "Sage — Conscious skincare & body care" },
+      { name: "description", content: "A responsive e-commerce website for cosmetic products, featuring a curated product catalog, detailed product pages, and a functional shopping cart." },
+      { property: "og:description", content: "A responsive e-commerce website for cosmetic products, featuring a curated product catalog, detailed product pages, and a functional shopping cart." },
+      { name: "twitter:description", content: "A responsive e-commerce website for cosmetic products, featuring a curated product catalog, detailed product pages, and a functional shopping cart." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/30f649c6-bd43-43b2-88f5-791f4c8daf34/id-preview-3a30a0f4--60c9000d-9a66-4fc9-9d1c-34d10510443a.lovable.app-1776795266740.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/30f649c6-bd43-43b2-88f5-791f4c8daf34/id-preview-3a30a0f4--60c9000d-9a66-4fc9-9d1c-34d10510443a.lovable.app-1776795266740.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
