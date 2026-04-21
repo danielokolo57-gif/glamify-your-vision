@@ -1,9 +1,8 @@
-import jar from "@/assets/product-jar.jpg";
-import spray from "@/assets/product-spray.jpg";
-import pump from "@/assets/product-pump.jpg";
-import trio from "@/assets/product-trio.jpg";
-import collection from "@/assets/product-collection.jpg";
-import tubes from "@/assets/product-tubes.jpg";
+import cream from "@/assets/glowmuse-cream.jpg";
+import foundation from "@/assets/glowmuse-foundation.jpg";
+import lips from "@/assets/glowmuse-lips.jpg";
+import eye from "@/assets/glowmuse-eye.jpg";
+import hero from "@/assets/glowmuse-hero.jpg";
 
 export type Product = {
   id: string;
@@ -18,70 +17,70 @@ export type Product = {
 
 export const products: Product[] = [
   {
-    id: "renewal-cream",
-    name: "Renewal Night Cream",
-    tagline: "Restorative overnight treatment",
+    id: "radiance-foundation",
+    name: "Radiance Foundation",
+    tagline: "Luminous skin-like finish",
     description:
-      "A rich, slow-absorbing cream formulated with squalane, ceramides, and bakuchiol to support your skin's natural overnight renewal cycle.",
+      "A weightless, buildable foundation that evens tone while letting your natural glow show through. Hydrating, breathable, and made for real mornings.",
+    price: 42,
+    category: "skincare",
+    image: foundation,
+    size: "30 ml",
+  },
+  {
+    id: "muse-lipstick",
+    name: "Muse Satin Lipstick",
+    tagline: "Rich satin color",
+    description:
+      "A creamy, hydrating lipstick in muse-worthy shades. Long-wear pigment with the comfort of a balm — paired with our cult mascara.",
+    price: 28,
+    category: "skincare",
+    image: lips,
+    size: "3.5 g",
+  },
+  {
+    id: "glow-cream",
+    name: "Inner Glow Cream",
+    tagline: "Plump, dewy hydration",
+    description:
+      "A featherlight moisturizer infused with hyaluronic acid and niacinamide for an instant lit-from-within glow that lasts all day.",
     price: 48,
     category: "skincare",
-    image: jar,
+    image: cream,
     size: "50 ml",
   },
   {
-    id: "hydrating-mist",
-    name: "Hydrating Botanical Mist",
-    tagline: "Refresh & set",
+    id: "winged-liner",
+    name: "Liquid Winged Liner",
+    tagline: "Sharp, all-day wing",
     description:
-      "A fine, weightless mist of rose water, aloe and hyaluronic acid. Use to refresh skin throughout the day or set makeup with a soft dewy finish.",
-    price: 28,
-    category: "skincare",
-    image: spray,
-    size: "100 ml",
-  },
-  {
-    id: "gentle-cleanser",
-    name: "Gentle Daily Cleanser",
-    tagline: "Calm, balanced skin",
-    description:
-      "A pH-balanced gel cleanser that lifts impurities without stripping. Suitable for sensitive and reactive skin, every day, morning and night.",
-    price: 32,
-    category: "skincare",
-    image: pump,
-    size: "200 ml",
-  },
-  {
-    id: "all-in-one-trio",
-    name: "All-in-One Routine Trio",
-    tagline: "Three steps, every day",
-    description:
-      "Cleanser, serum and moisturizer — the complete daily routine in three thoughtful formulas. A gentle introduction to the Sage philosophy.",
-    price: 96,
-    category: "skincare",
-    image: trio,
-    size: "Set of 3",
-  },
-  {
-    id: "complete-collection",
-    name: "The Complete Collection",
-    tagline: "Everything you need",
-    description:
-      "Our full skincare line in one carefully curated set. Cleanser, toner, serum and treatment — designed to work in harmony.",
-    price: 168,
-    category: "skincare",
-    image: collection,
-    size: "Set of 4",
-  },
-  {
-    id: "hand-balm-duo",
-    name: "Hand & Cuticle Balm Duo",
-    tagline: "Pocket-sized care",
-    description:
-      "A pair of nourishing balms infused with shea butter and sweet almond oil. Slip one in your bag, keep one by the sink.",
+      "A precision felt-tip liner with intense matte-black pigment. Smudge-proof, waterproof, made for the perfect flick.",
     price: 24,
-    category: "body",
-    image: tubes,
-    size: "2 × 30 ml",
+    category: "accessories",
+    image: eye,
+    size: "1.2 ml",
+  },
+  {
+    id: "muse-edit",
+    name: "The Muse Edit",
+    tagline: "Five-piece beauty kit",
+    description:
+      "Our hero essentials in one curated set: foundation, lipstick, glow cream, mascara, and liner. Everything you need to unleash your inner radiance.",
+    price: 138,
+    category: "skincare",
+    image: hero,
+    size: "Set of 5",
+  },
+  {
+    id: "silk-lash-mascara",
+    name: "Silk Lash Mascara",
+    tagline: "Volume + length",
+    description:
+      "A buildable mascara that lifts, separates and defines without clumping. Conditions lashes with peptides and silk proteins.",
+    price: 26,
+    category: "skincare",
+    image: lips,
+    size: "10 ml",
   },
 ];
 
