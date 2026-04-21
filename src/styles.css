@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -33,55 +33,59 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
-  --color-nude: var(--nude);
-  --color-nude-light: var(--nude-light);
-  --color-nude-dark: var(--nude-dark);
+  --color-wine: var(--wine);
+  --color-wine-dark: var(--wine-dark);
+  --color-wine-light: var(--wine-light);
   --color-cream: var(--cream);
+  --color-cream-soft: var(--cream-soft);
   --color-ink: var(--ink);
-  --font-display: "Playfair Display", Georgia, serif;
+  --color-gold: var(--gold);
+  --font-display: "Cormorant Garamond", Georgia, serif;
   --font-sans: "Inter", system-ui, sans-serif;
 }
 
 :root {
-  --radius: 1.25rem;
+  --radius: 0.75rem;
 
-  /* Glowmuse palette — warm nude + ink black + cream */
-  --background: oklch(0.95 0.022 75);
-  --foreground: oklch(0.18 0.012 60);
+  /* Belletny palette — warm cream + deep wine + ink */
+  --background: oklch(0.985 0.005 80);
+  --foreground: oklch(0.18 0.012 30);
 
-  --card: oklch(0.97 0.018 80);
-  --card-foreground: oklch(0.18 0.012 60);
+  --card: oklch(0.97 0.012 75);
+  --card-foreground: oklch(0.18 0.012 30);
 
-  --popover: oklch(0.97 0.018 80);
-  --popover-foreground: oklch(0.18 0.012 60);
+  --popover: oklch(0.99 0.005 80);
+  --popover-foreground: oklch(0.18 0.012 30);
 
-  --primary: oklch(0.18 0.012 60);
-  --primary-foreground: oklch(0.97 0.02 80);
+  --primary: oklch(0.42 0.12 10);
+  --primary-foreground: oklch(0.99 0.005 80);
 
-  --secondary: oklch(0.91 0.028 75);
-  --secondary-foreground: oklch(0.22 0.014 60);
+  --secondary: oklch(0.94 0.018 70);
+  --secondary-foreground: oklch(0.22 0.012 30);
 
-  --muted: oklch(0.92 0.022 78);
-  --muted-foreground: oklch(0.45 0.018 60);
+  --muted: oklch(0.95 0.012 75);
+  --muted-foreground: oklch(0.5 0.012 30);
 
-  --accent: oklch(0.88 0.035 70);
-  --accent-foreground: oklch(0.2 0.012 60);
+  --accent: oklch(0.93 0.025 60);
+  --accent-foreground: oklch(0.22 0.012 30);
 
   --destructive: oklch(0.55 0.18 25);
-  --destructive-foreground: oklch(0.98 0.008 90);
+  --destructive-foreground: oklch(0.98 0.005 80);
 
-  --border: oklch(0.85 0.022 75);
-  --input: oklch(0.88 0.02 75);
-  --ring: oklch(0.18 0.012 60);
+  --border: oklch(0.9 0.012 75);
+  --input: oklch(0.92 0.01 75);
+  --ring: oklch(0.42 0.12 10);
 
-  --nude: oklch(0.82 0.05 65);
-  --nude-light: oklch(0.9 0.035 70);
-  --nude-dark: oklch(0.62 0.06 55);
-  --cream: oklch(0.96 0.022 80);
-  --ink: oklch(0.13 0.008 60);
+  --wine: oklch(0.42 0.13 10);
+  --wine-dark: oklch(0.32 0.11 12);
+  --wine-light: oklch(0.55 0.13 10);
+  --cream: oklch(0.94 0.025 70);
+  --cream-soft: oklch(0.96 0.018 75);
+  --ink: oklch(0.18 0.012 30);
+  --gold: oklch(0.72 0.09 80);
 
-  --shadow-soft: 0 20px 60px -20px oklch(0.2 0.02 60 / 0.18);
-  --shadow-product: 0 30px 80px -30px oklch(0.15 0.02 60 / 0.35);
+  --shadow-soft: 0 20px 60px -20px oklch(0.2 0.02 30 / 0.18);
+  --shadow-product: 0 10px 30px -15px oklch(0.2 0.02 30 / 0.25);
 }
 
 @layer base {
@@ -103,86 +107,56 @@
   h1, h2, h3, h4 {
     font-family: var(--font-display);
     font-weight: 500;
-    letter-spacing: -0.015em;
+    letter-spacing: -0.01em;
   }
 }
 
 @layer utilities {
-  .font-display {
-    font-family: var(--font-display);
-  }
-  .text-nude {
-    color: var(--nude);
-  }
-  .bg-nude {
-    background-color: var(--nude);
-  }
-  .bg-nude-light {
-    background-color: var(--nude-light);
-  }
-  .bg-nude-dark {
-    background-color: var(--nude-dark);
-  }
-  .text-nude-dark {
-    color: var(--nude-dark);
-  }
-  .bg-cream {
-    background-color: var(--cream);
-  }
-  .text-cream {
-    color: var(--cream);
-  }
-  .bg-ink {
-    background-color: var(--ink);
-  }
-  .text-ink {
-    color: var(--ink);
-  }
-  .shadow-soft {
-    box-shadow: var(--shadow-soft);
-  }
-  .shadow-product {
-    box-shadow: var(--shadow-product);
-  }
+  .font-display { font-family: var(--font-display); }
+
+  .text-wine { color: var(--wine); }
+  .bg-wine { background-color: var(--wine); }
+  .bg-wine-dark { background-color: var(--wine-dark); }
+  .bg-wine-light { background-color: var(--wine-light); }
+  .border-wine { border-color: var(--wine); }
+  .hover\:bg-wine:hover { background-color: var(--wine); }
+  .hover\:bg-wine-dark:hover { background-color: var(--wine-dark); }
+
+  .bg-cream { background-color: var(--cream); }
+  .bg-cream-soft { background-color: var(--cream-soft); }
+  .text-cream { color: var(--cream); }
+
+  .text-ink { color: var(--ink); }
+  .bg-ink { background-color: var(--ink); }
+
+  .text-gold { color: var(--gold); }
+
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-product { box-shadow: var(--shadow-product); }
 
   /* Legacy aliases retained so older route files still compile */
-  .bg-sage { background-color: var(--ink); }
-  .bg-sage-dark { background-color: var(--ink); }
-  .bg-sage-light { background-color: var(--nude-light); }
-  .text-sage { color: var(--ink); }
-  .text-sage-dark { color: var(--nude-dark); }
-  .hover\:bg-sage:hover { background-color: var(--ink); }
-  .hover\:bg-sage-dark:hover { background-color: var(--nude-dark); }
+  .bg-sage { background-color: var(--wine); }
+  .bg-sage-dark { background-color: var(--wine-dark); }
+  .bg-sage-light { background-color: var(--cream); }
+  .text-sage { color: var(--wine); }
+  .text-sage-dark { color: var(--wine-dark); }
+  .bg-nude { background-color: var(--cream); }
+  .bg-nude-light { background-color: var(--cream-soft); }
+  .bg-nude-dark { background-color: var(--wine-dark); }
+  .text-nude { color: var(--cream); }
+  .text-nude-dark { color: var(--wine-dark); }
+  .hover\:bg-sage:hover { background-color: var(--wine); }
+  .hover\:bg-sage-dark:hover { background-color: var(--wine-dark); }
 
-  .giant-word {
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-style: italic;
-    line-height: 0.85;
-    letter-spacing: -0.04em;
-  }
-
-  .fade-in-up {
-    animation: fadeInUp 0.8s ease-out forwards;
-  }
-
+  .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
   @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
-  .float-slow {
-    animation: floatSlow 6s ease-in-out infinite;
-  }
-
+  .float-slow { animation: floatSlow 6s ease-in-out infinite; }
   @keyframes floatSlow {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
+    50% { transform: translateY(-10px); }
   }
 }
