@@ -242,36 +242,7 @@ function HomePage() {
           </div>
         </section>
 
-        {/* Newsletter */}
-        <section className="bg-background pb-16">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="rounded-2xl bg-wine text-cream px-6 sm:px-12 py-12 sm:py-16 text-center">
-              <h2 className="font-display text-3xl sm:text-4xl">
-                Join the Lumière Beauty Beauty Club
-              </h2>
-              <p className="mt-3 max-w-md mx-auto text-cream/70 text-sm">
-                Subscribe for exclusive launches, tutorials, and 10% off your first order.
-              </p>
-              <form
-                onSubmit={(e) => e.preventDefault()}
-                className="mt-7 max-w-md mx-auto flex flex-col sm:flex-row gap-2"
-              >
-                <input
-                  type="email"
-                  required
-                  placeholder="Your email address"
-                  className="flex-1 rounded-full bg-cream/10 border border-cream/20 px-5 h-12 text-sm text-cream placeholder:text-cream/50 focus:outline-none focus:border-cream/60"
-                />
-                <button
-                  type="submit"
-                  className="rounded-full bg-cream text-wine h-12 px-7 text-sm font-medium hover:bg-cream/90 transition-colors"
-                >
-                  Subscribe
-                </button>
-              </form>
-            </div>
-          </div>
-        </section>
+        <div className="pb-8" />
       </main>
 
       <Footer />
