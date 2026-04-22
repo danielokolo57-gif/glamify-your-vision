@@ -26,9 +26,10 @@ export function Header({ variant = "solid" }: { variant?: "overlay" | "solid" })
           <div className="flex items-center gap-2">
             <Phone className="h-3.5 w-3.5" />
             <span className="hidden sm:inline">Customer Service:</span>
-            <span className="font-medium">(+91) 123-456-789</span>
+            <span className="font-medium">+234 803 123 4567</span>
           </div>
           <div className="hidden md:flex items-center gap-5">
+            <span className="hidden lg:inline">Free delivery in Lagos on orders over ₦50,000</span>
             <a href="#" className="hover:text-cream transition-colors">Track Order</a>
             <a href="#" className="hover:text-cream transition-colors">Help</a>
             <a href="#" className="hover:text-cream transition-colors">Sign In</a>
