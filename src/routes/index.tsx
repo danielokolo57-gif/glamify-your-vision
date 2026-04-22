@@ -18,13 +18,13 @@ import catFaceCream from "@/assets/cat-facecream.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Belletny — Premium beauty & skincare" },
+      { title: "Lumière Beauty — Premium beauty & skincare" },
       {
         name: "description",
         content:
-          "Belletny brings you premium cosmetics, skincare and fragrance — luxury formulas, honest ingredients, and elegant essentials for every glow.",
+          "Lumière Beauty brings you premium cosmetics, skincare and fragrance — luxury formulas, honest ingredients, and elegant essentials for every glow.",
       },
-      { property: "og:title", content: "Belletny — Premium beauty & skincare" },
+      { property: "og:title", content: "Lumière Beauty — Premium beauty & skincare" },
       {
         property: "og:description",
         content: "Premium cosmetics, skincare and fragrance for every glow.",
@@ -88,7 +88,7 @@ function HomePage() {
                 <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[500px] order-1 lg:order-2">
                   <img
                     src={hero}
-                    alt="Smiling model applying Belletny natural face cream"
+                    alt="Smiling model applying Lumière Beauty natural face cream"
                     width={1920}
                     height={1080}
                     className="absolute inset-0 h-full w-full object-cover"
@@ -247,7 +247,7 @@ function HomePage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="rounded-2xl bg-wine text-cream px-6 sm:px-12 py-12 sm:py-16 text-center">
               <h2 className="font-display text-3xl sm:text-4xl">
-                Join the Belletny Beauty Club
+                Join the Lumière Beauty Beauty Club
               </h2>
               <p className="mt-3 max-w-md mx-auto text-cream/70 text-sm">
                 Subscribe for exclusive launches, tutorials, and 10% off your first order.

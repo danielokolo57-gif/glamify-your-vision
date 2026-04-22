@@ -11,10 +11,10 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Belletny Nigeria" },
-      { name: "description", content: "Get in touch with the Belletny team in Lagos, Nigeria." },
-      { property: "og:title", content: "Contact — Belletny Nigeria" },
-      { property: "og:description", content: "Get in touch with the Belletny team in Lagos, Nigeria." },
+      { title: "Contact — Lumière Beauty Nigeria" },
+      { name: "description", content: "Get in touch with the Lumière Beauty team in Lagos, Nigeria." },
+      { property: "og:title", content: "Contact — Lumière Beauty Nigeria" },
+      { property: "og:description", content: "Get in touch with the Lumière Beauty team in Lagos, Nigeria." },
     ],
   }),
   component: ContactPage,
@@ -52,7 +52,7 @@ function ContactPage() {
             </div>
             <div className="rounded-2xl border border-border bg-cream-soft p-4">
               <p className="text-xs uppercase tracking-wider text-muted-foreground">Email</p>
-              <p className="mt-1 font-medium text-ink">hello@belletny.ng</p>
+              <p className="mt-1 font-medium text-ink">hello@lumierebeauty.ng</p>
             </div>
             <div className="rounded-2xl border border-border bg-cream-soft p-4">
               <p className="text-xs uppercase tracking-wider text-muted-foreground">Showroom</p>

@@ -17,9 +17,9 @@ export const Route = createFileRoute("/product/$productId")({
   head: ({ loaderData }) => ({
     meta: loaderData
       ? [
-          { title: `${loaderData.product.name} — Belletny Nigeria` },
+          { title: `${loaderData.product.name} — Lumière Beauty Nigeria` },
           { name: "description", content: loaderData.product.description },
-          { property: "og:title", content: `${loaderData.product.name} — Belletny Nigeria` },
+          { property: "og:title", content: `${loaderData.product.name} — Lumière Beauty Nigeria` },
           { property: "og:description", content: loaderData.product.description },
           { property: "og:image", content: loaderData.product.image },
           { name: "twitter:image", content: loaderData.product.image },

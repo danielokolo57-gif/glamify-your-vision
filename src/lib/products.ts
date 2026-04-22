@@ -27,7 +27,7 @@ export type Product = {
 export const products: Product[] = [
   {
     id: "ultimate-eye-shadow",
-    name: "Belletny Ultimate Eye Shadow",
+    name: "Lumière Beauty Ultimate Eye Shadow",
     tagline: "10-shade matte palette",
     description:
       "A pro-level eyeshadow palette featuring ten richly pigmented matte and shimmer shades, blendable enough for everyday and bold enough for the Lagos nightlife.",

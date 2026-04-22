@@ -10,7 +10,7 @@ export function CartDrawer() {
 
   const handleCheckout = () => {
     toast.success("Order placed", {
-      description: "This is a demo checkout. Thanks for shopping with Belletny!",
+      description: "This is a demo checkout. Thanks for shopping with Lumière Beauty!",
     });
     clear();
     setOpen(false);
