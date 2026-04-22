@@ -47,10 +47,10 @@ function BlogPage() {
       <Header variant="solid" />
       <main className="flex-1">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
-          <p className="text-sm uppercase tracking-wider text-sage-dark">Journal</p>
+          <p className="text-sm uppercase tracking-wider text-wine">Journal</p>
           <h1 className="font-display text-5xl sm:text-6xl mt-2">Notes & rituals</h1>
           <p className="mt-4 max-w-xl text-foreground/70">
-            Thoughts on conscious skincare, ingredients we love, and quiet moments of care.
+            Beauty stories, ingredient deep-dives and ritual ideas — from our editors in Lagos.
           </p>
           <div className="mt-12 divide-y divide-border">
             {posts.map((post) => (
@@ -58,7 +58,7 @@ function BlogPage() {
                 <p className="text-xs uppercase tracking-wider text-muted-foreground">
                   {post.date} · {post.read}
                 </p>
-                <h2 className="font-display text-3xl sm:text-4xl mt-2 group-hover:text-sage-dark transition-colors">
+                <h2 className="font-display text-3xl sm:text-4xl mt-2 group-hover:text-wine transition-colors">
                   <Link to="/blog">{post.title}</Link>
                 </h2>
                 <p className="mt-3 text-foreground/70 leading-relaxed max-w-2xl">{post.excerpt}</p>

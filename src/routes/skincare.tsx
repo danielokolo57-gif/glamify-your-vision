@@ -7,10 +7,10 @@ import { products } from "@/lib/products";
 export const Route = createFileRoute("/skincare")({
   head: () => ({
     meta: [
-      { title: "Skincare — Sage" },
-      { name: "description", content: "Cleansers, treatments and moisturizers for healthy, balanced skin." },
-      { property: "og:title", content: "Skincare — Sage" },
-      { property: "og:description", content: "Cleansers, treatments and moisturizers for healthy, balanced skin." },
+      { title: "Skincare — Belletny Nigeria" },
+      { name: "description", content: "Cleansers, treatments and moisturizers formulated for Nigerian skin and weather." },
+      { property: "og:title", content: "Skincare — Belletny Nigeria" },
+      { property: "og:description", content: "Cleansers, treatments and moisturizers formulated for Nigerian skin and weather." },
     ],
   }),
   component: SkincarePage,
@@ -23,7 +23,7 @@ function SkincarePage() {
       <Header variant="solid" />
       <main className="flex-1">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
-          <p className="text-sm uppercase tracking-wider text-sage-dark">Collection</p>
+          <p className="text-sm uppercase tracking-wider text-wine">Collection</p>
           <h1 className="font-display text-5xl sm:text-6xl mt-2">Skincare</h1>
           <p className="mt-4 max-w-xl text-foreground/70">
             A complete routine — designed to be gentle, effective, and effortless.

@@ -51,11 +51,11 @@ export function ProductCard({ product }: { product: Product }) {
         </h3>
         <div className="mt-1.5 flex items-baseline gap-2">
           <span className="text-sm font-semibold text-ink tabular-nums">
-            ${product.price.toFixed(2)}
+            ₦{product.price.toLocaleString("en-NG")}
           </span>
           {hasDiscount && (
             <span className="text-xs text-muted-foreground line-through tabular-nums">
-              ${product.oldPrice!.toFixed(2)}
+              ₦{product.oldPrice!.toLocaleString("en-NG")}
             </span>
           )}
         </div>

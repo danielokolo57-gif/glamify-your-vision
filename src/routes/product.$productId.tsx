@@ -17,9 +17,9 @@ export const Route = createFileRoute("/product/$productId")({
   head: ({ loaderData }) => ({
     meta: loaderData
       ? [
-          { title: `${loaderData.product.name} — Sage` },
+          { title: `${loaderData.product.name} — Belletny Nigeria` },
           { name: "description", content: loaderData.product.description },
-          { property: "og:title", content: `${loaderData.product.name} — Sage` },
+          { property: "og:title", content: `${loaderData.product.name} — Belletny Nigeria` },
           { property: "og:description", content: loaderData.product.description },
           { property: "og:image", content: loaderData.product.image },
           { name: "twitter:image", content: loaderData.product.image },
@@ -33,7 +33,7 @@ export const Route = createFileRoute("/product/$productId")({
         <div>
           <h1 className="font-display text-5xl">Product not found</h1>
           <p className="mt-3 text-muted-foreground">This product doesn't exist or has been removed.</p>
-          <Button asChild className="mt-6 rounded-full bg-sage hover:bg-sage-dark text-primary-foreground">
+          <Button asChild className="mt-6 rounded-full bg-wine hover:bg-wine-dark text-cream">
             <Link to="/catalog">Back to catalog</Link>
           </Button>
         </div>
@@ -72,10 +72,10 @@ function ProductPage() {
               />
             </div>
             <div className="lg:py-6">
-              <p className="text-sm uppercase tracking-wider text-sage-dark">{product.category}</p>
+              <p className="text-sm uppercase tracking-wider text-wine">{product.category}</p>
               <h1 className="font-display text-4xl sm:text-5xl mt-2">{product.name}</h1>
               <p className="mt-2 text-foreground/70">{product.tagline}</p>
-              <p className="mt-6 text-3xl font-display tabular-nums">${product.price}</p>
+              <p className="mt-6 text-3xl font-display tabular-nums">₦{product.price.toLocaleString("en-NG")}</p>
               <p className="mt-4 text-sm text-muted-foreground">{product.size}</p>
 
               <p className="mt-8 text-foreground/80 leading-relaxed">{product.description}</p>
@@ -102,21 +102,21 @@ function ProductPage() {
                 </div>
                 <Button
                   onClick={() => add(product.id, qty)}
-                  className="flex-1 rounded-full bg-sage hover:bg-sage-dark text-primary-foreground h-12"
+                  className="flex-1 rounded-full bg-wine hover:bg-wine-dark text-cream h-12"
                 >
-                  Add to bag — ${(product.price * qty).toFixed(2)}
+                  Add to bag — ₦{(product.price * qty).toLocaleString("en-NG")}
                 </Button>
               </div>
 
               <ul className="mt-10 space-y-3 text-sm text-foreground/80">
                 {[
                   "Dermatologist-tested formula",
-                  "Free of parabens, sulfates and fragrance",
+                  "Free of parabens, sulfates and harsh fragrance",
                   "Recyclable glass packaging",
-                  "Free shipping over $60",
+                  "Free delivery in Lagos on orders over ₦50,000",
                 ].map((b) => (
                   <li key={b} className="flex items-center gap-3">
-                    <span className="h-6 w-6 rounded-full bg-sage-light flex items-center justify-center text-sage-dark">
+                    <span className="h-6 w-6 rounded-full bg-sage-light flex items-center justify-center text-wine">
                       <Check className="h-3.5 w-3.5" />
                     </span>
                     {b}

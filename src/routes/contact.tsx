@@ -11,10 +11,10 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Sage" },
-      { name: "description", content: "Get in touch with the Sage team." },
-      { property: "og:title", content: "Contact — Sage" },
-      { property: "og:description", content: "Get in touch with the Sage team." },
+      { title: "Contact — Belletny Nigeria" },
+      { name: "description", content: "Get in touch with the Belletny team in Lagos, Nigeria." },
+      { property: "og:title", content: "Contact — Belletny Nigeria" },
+      { property: "og:description", content: "Get in touch with the Belletny team in Lagos, Nigeria." },
     ],
   }),
   component: ContactPage,
@@ -40,11 +40,25 @@ function ContactPage() {
       <Header variant="solid" />
       <main className="flex-1">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
-          <p className="text-sm uppercase tracking-wider text-sage-dark">Contact</p>
+          <p className="text-sm uppercase tracking-wider text-wine">Contact</p>
           <h1 className="font-display text-5xl sm:text-6xl mt-2">Get in touch</h1>
           <p className="mt-4 text-foreground/70">
-            Questions about a product or your order? We're happy to help.
+            Questions about a product or your order? Our Lagos-based team is happy to help — call, WhatsApp or email us.
           </p>
+          <div className="mt-6 grid gap-3 sm:grid-cols-3 text-sm">
+            <div className="rounded-2xl border border-border bg-cream-soft p-4">
+              <p className="text-xs uppercase tracking-wider text-muted-foreground">Phone / WhatsApp</p>
+              <p className="mt-1 font-medium text-ink">+234 803 123 4567</p>
+            </div>
+            <div className="rounded-2xl border border-border bg-cream-soft p-4">
+              <p className="text-xs uppercase tracking-wider text-muted-foreground">Email</p>
+              <p className="mt-1 font-medium text-ink">hello@belletny.ng</p>
+            </div>
+            <div className="rounded-2xl border border-border bg-cream-soft p-4">
+              <p className="text-xs uppercase tracking-wider text-muted-foreground">Showroom</p>
+              <p className="mt-1 font-medium text-ink">15 Adeola Odeku St, Victoria Island, Lagos</p>
+            </div>
+          </div>
 
           <form onSubmit={handleSubmit} className="mt-10 space-y-5">
             <div className="grid gap-5 sm:grid-cols-2">
@@ -68,7 +82,7 @@ function ContactPage() {
             <Button
               type="submit"
               disabled={submitting}
-              className="rounded-full bg-sage hover:bg-sage-dark text-primary-foreground h-12 px-8"
+              className="rounded-full bg-wine hover:bg-wine-dark text-cream h-12 px-8"
             >
               {submitting ? "Sending..." : "Send message"}
             </Button>
