@@ -7,9 +7,9 @@ import { products } from "@/lib/products";
 export const Route = createFileRoute("/skincare")({
   head: () => ({
     meta: [
-      { title: "Skincare — Belletny Nigeria" },
+      { title: "Skincare — Lumière Beauty Nigeria" },
       { name: "description", content: "Cleansers, treatments and moisturizers formulated for Nigerian skin and weather." },
-      { property: "og:title", content: "Skincare — Belletny Nigeria" },
+      { property: "og:title", content: "Skincare — Lumière Beauty Nigeria" },
       { property: "og:description", content: "Cleansers, treatments and moisturizers formulated for Nigerian skin and weather." },
     ],
   }),

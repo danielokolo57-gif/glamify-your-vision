@@ -8,9 +8,11 @@ export function Footer() {
         <div className="md:col-span-1">
           <div className="flex items-center gap-2">
             <span className="h-9 w-9 rounded-full bg-cream text-wine flex items-center justify-center font-display text-xl leading-none">
-              B
+              L
             </span>
-            <span className="font-display italic text-3xl text-cream leading-none">Belletny</span>
+            <span className="font-display italic text-3xl text-cream leading-none">
+              Lumière <span className="not-italic font-sans text-[10px] tracking-[0.25em] uppercase align-middle ml-1">Beauty</span>
+            </span>
           </div>
           <p className="mt-4 max-w-xs text-sm text-cream/70 leading-relaxed">
             Premium beauty and skincare for every glow. Curated formulas, honest
@@ -65,14 +67,14 @@ export function Footer() {
             </li>
             <li className="flex items-center gap-2">
               <Mail className="h-4 w-4 shrink-0" />
-              <span>hello@belletny.ng</span>
+              <span>hello@lumierebeauty.ng</span>
             </li>
           </ul>
         </div>
       </div>
       <div className="border-t border-cream/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-cream/50">
-          <p>© {new Date().getFullYear()} Belletny. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Lumière Beauty. All rights reserved.</p>
           <p>Beauty, bottled.</p>
         </div>
       </div>

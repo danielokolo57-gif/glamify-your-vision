@@ -59,12 +59,14 @@ export function Header({ variant = "solid" }: { variant?: "overlay" | "solid" })
           </div>
 
           {/* Logo */}
-          <Link to="/" className="flex-1 flex items-center justify-center md:justify-center" aria-label="Belletny home">
+          <Link to="/" className="flex-1 flex items-center justify-center md:justify-center" aria-label="Lumière Beauty home">
             <div className="flex items-center gap-2">
               <span className="h-8 w-8 rounded-full bg-wine text-cream flex items-center justify-center font-display text-xl leading-none">
-                B
+                L
               </span>
-              <span className="font-display italic text-3xl text-ink leading-none">Belletny</span>
+              <span className="font-display italic text-2xl sm:text-3xl text-ink leading-none whitespace-nowrap">
+                Lumière <span className="not-italic font-sans text-xs tracking-[0.25em] uppercase text-wine align-middle ml-1">Beauty</span>
+              </span>
             </div>
           </Link>
 

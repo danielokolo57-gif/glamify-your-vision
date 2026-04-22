@@ -47,7 +47,7 @@
 :root {
   --radius: 0.75rem;
 
-  /* Belletny palette — warm cream + deep wine + ink */
+  /* Lumière Beauty palette — warm cream + deep wine + ink */
   --background: oklch(0.985 0.005 80);
   --foreground: oklch(0.18 0.012 30);
 
