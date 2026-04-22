@@ -57,15 +57,15 @@ export function Footer() {
           <ul className="space-y-3 text-sm">
             <li className="flex items-start gap-2">
               <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
-              <span>123 Beauty Lane, Suite 400<br />New York, NY 10001</span>
+              <span>15 Adeola Odeku Street<br />Victoria Island, Lagos 101241</span>
             </li>
             <li className="flex items-center gap-2">
               <Phone className="h-4 w-4 shrink-0" />
-              <span>(+91) 123-456-789</span>
+              <span>+234 803 123 4567</span>
             </li>
             <li className="flex items-center gap-2">
               <Mail className="h-4 w-4 shrink-0" />
-              <span>hello@belletny.com</span>
+              <span>hello@belletny.ng</span>
             </li>
           </ul>
         </div>
