@@ -75,7 +75,7 @@ function ProductPage() {
               <p className="text-sm uppercase tracking-wider text-sage-dark">{product.category}</p>
               <h1 className="font-display text-4xl sm:text-5xl mt-2">{product.name}</h1>
               <p className="mt-2 text-foreground/70">{product.tagline}</p>
-              <p className="mt-6 text-3xl font-display tabular-nums">${product.price}</p>
+              <p className="mt-6 text-3xl font-display tabular-nums">₦{product.price.toLocaleString("en-NG")}</p>
               <p className="mt-4 text-sm text-muted-foreground">{product.size}</p>
 
               <p className="mt-8 text-foreground/80 leading-relaxed">{product.description}</p>
@@ -102,18 +102,18 @@ function ProductPage() {
                 </div>
                 <Button
                   onClick={() => add(product.id, qty)}
-                  className="flex-1 rounded-full bg-sage hover:bg-sage-dark text-primary-foreground h-12"
+                  className="flex-1 rounded-full bg-wine hover:bg-wine-dark text-cream h-12"
                 >
-                  Add to bag — ${(product.price * qty).toFixed(2)}
+                  Add to bag — ₦{(product.price * qty).toLocaleString("en-NG")}
                 </Button>
               </div>
 
               <ul className="mt-10 space-y-3 text-sm text-foreground/80">
                 {[
                   "Dermatologist-tested formula",
-                  "Free of parabens, sulfates and fragrance",
+                  "Free of parabens, sulfates and harsh fragrance",
                   "Recyclable glass packaging",
-                  "Free shipping over $60",
+                  "Free delivery in Lagos on orders over ₦50,000",
                 ].map((b) => (
                   <li key={b} className="flex items-center gap-3">
                     <span className="h-6 w-6 rounded-full bg-sage-light flex items-center justify-center text-sage-dark">

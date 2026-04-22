@@ -10,7 +10,7 @@ export function CartDrawer() {
 
   const handleCheckout = () => {
     toast.success("Order placed", {
-      description: "This is a demo checkout. Thanks for trying Sage!",
+      description: "This is a demo checkout. Thanks for shopping with Belletny!",
     });
     clear();
     setOpen(false);
@@ -74,7 +74,7 @@ export function CartDrawer() {
                         </button>
                       </div>
                       <p className="text-sm font-medium tabular-nums">
-                        ${(product.price * quantity).toFixed(2)}
+                        ₦{(product.price * quantity).toLocaleString("en-NG")}
                       </p>
                     </div>
                   </div>
@@ -93,10 +93,10 @@ export function CartDrawer() {
             <div className="border-t border-border pt-4 space-y-4">
               <div className="flex items-center justify-between">
                 <span className="text-sm text-muted-foreground">Subtotal</span>
-                <span className="font-display text-2xl tabular-nums">${subtotal.toFixed(2)}</span>
+                <span className="font-display text-2xl tabular-nums">₦{subtotal.toLocaleString("en-NG")}</span>
               </div>
               <p className="text-xs text-muted-foreground">
-                Shipping and taxes calculated at checkout.
+                Shipping and taxes calculated at checkout. Free delivery in Lagos on orders over ₦50,000.
               </p>
               <Button
                 onClick={handleCheckout}

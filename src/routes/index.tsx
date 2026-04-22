@@ -104,10 +104,10 @@ function HomePage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 rounded-2xl border border-border bg-cream-soft p-6 sm:p-8">
               {[
-                { icon: Truck, title: "Free Shipping", body: "On orders over $50" },
-                { icon: RotateCcw, title: "Easy Returns", body: "30-day money back" },
-                { icon: ShieldCheck, title: "Secure Payment", body: "100% protected" },
-                { icon: Headphones, title: "24/7 Support", body: "Real humans, anytime" },
+                { icon: Truck, title: "Free Shipping", body: "On Lagos orders over ₦50,000" },
+                { icon: RotateCcw, title: "Easy Returns", body: "7-day money back" },
+                { icon: ShieldCheck, title: "Secure Payment", body: "Paystack & Flutterwave" },
+                { icon: Headphones, title: "24/7 Support", body: "WhatsApp +234 803 123 4567" },
               ].map((s) => (
                 <div key={s.title} className="flex items-center gap-3">
                   <div className="h-11 w-11 rounded-full bg-wine/10 text-wine flex items-center justify-center shrink-0">
