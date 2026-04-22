@@ -29,7 +29,7 @@ function AboutPage() {
       <Header variant="solid" />
       <main className="flex-1">
         <section className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-          <p className="text-sm uppercase tracking-wider text-sage-dark">About us</p>
+          <p className="text-sm uppercase tracking-wider text-wine">About us</p>
           <h1 className="font-display text-5xl sm:text-7xl mt-3 leading-[1.05]">
             A calm philosophy<br />of selfcare.
           </h1>
@@ -74,7 +74,7 @@ function AboutPage() {
           <p className="mt-4 text-foreground/70 max-w-xl mx-auto">
             Three thoughtful steps. Everything you need, nothing you don't.
           </p>
-          <Button asChild className="mt-8 rounded-full bg-sage hover:bg-sage-dark text-primary-foreground h-12 px-7">
+          <Button asChild className="mt-8 rounded-full bg-wine hover:bg-wine-dark text-cream h-12 px-7">
             <Link to="/catalog">Shop the collection</Link>
           </Button>
         </section>

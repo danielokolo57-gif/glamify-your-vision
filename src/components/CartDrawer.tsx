@@ -30,7 +30,7 @@ export function CartDrawer() {
               Discover thoughtful skincare designed for everyday care.
             </p>
             <Button
-              className="mt-6 rounded-full bg-sage hover:bg-sage-dark text-primary-foreground"
+              className="mt-6 rounded-full bg-wine hover:bg-wine-dark text-cream"
               onClick={() => setOpen(false)}
               asChild
             >
@@ -100,7 +100,7 @@ export function CartDrawer() {
               </p>
               <Button
                 onClick={handleCheckout}
-                className="w-full rounded-full bg-sage hover:bg-sage-dark text-primary-foreground h-12"
+                className="w-full rounded-full bg-wine hover:bg-wine-dark text-cream h-12"
               >
                 Checkout
               </Button>

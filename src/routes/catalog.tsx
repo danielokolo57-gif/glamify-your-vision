@@ -56,7 +56,7 @@ function CatalogPage() {
                 onClick={() => setActive(cat.id)}
                 className={`rounded-full px-4 py-2 text-sm border transition-colors ${
                   active === cat.id
-                    ? "bg-sage text-primary-foreground border-sage"
+                    ? "bg-wine text-cream border-wine"
                     : "border-border text-foreground/80 hover:border-foreground/40"
                 }`}
               >
