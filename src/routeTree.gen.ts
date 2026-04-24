@@ -14,6 +14,8 @@ import { Route as HairBodyRouteImport } from './routes/hair-body'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CatalogRouteImport } from './routes/catalog'
 import { Route as BlogRouteImport } from './routes/blog'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as AccountRouteImport } from './routes/account'
 import { Route as AccessoriesRouteImport } from './routes/accessories'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -44,6 +46,16 @@ const BlogRoute = BlogRouteImport.update({
   path: '/blog',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccountRoute = AccountRouteImport.update({
+  id: '/account',
+  path: '/account',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AccessoriesRoute = AccessoriesRouteImport.update({
   id: '/accessories',
   path: '/accessories',
@@ -69,6 +81,8 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/accessories': typeof AccessoriesRoute
+  '/account': typeof AccountRoute
+  '/auth': typeof AuthRoute
   '/blog': typeof BlogRoute
   '/catalog': typeof CatalogRoute
   '/contact': typeof ContactRoute
@@ -80,6 +94,8 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/accessories': typeof AccessoriesRoute
+  '/account': typeof AccountRoute
+  '/auth': typeof AuthRoute
   '/blog': typeof BlogRoute
   '/catalog': typeof CatalogRoute
   '/contact': typeof ContactRoute
@@ -92,6 +108,8 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/accessories': typeof AccessoriesRoute
+  '/account': typeof AccountRoute
+  '/auth': typeof AuthRoute
   '/blog': typeof BlogRoute
   '/catalog': typeof CatalogRoute
   '/contact': typeof ContactRoute
@@ -105,6 +123,8 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/accessories'
+    | '/account'
+    | '/auth'
     | '/blog'
     | '/catalog'
     | '/contact'
@@ -116,6 +136,8 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/accessories'
+    | '/account'
+    | '/auth'
     | '/blog'
     | '/catalog'
     | '/contact'
@@ -127,6 +149,8 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/accessories'
+    | '/account'
+    | '/auth'
     | '/blog'
     | '/catalog'
     | '/contact'
@@ -139,6 +163,8 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   AccessoriesRoute: typeof AccessoriesRoute
+  AccountRoute: typeof AccountRoute
+  AuthRoute: typeof AuthRoute
   BlogRoute: typeof BlogRoute
   CatalogRoute: typeof CatalogRoute
   ContactRoute: typeof ContactRoute
@@ -184,6 +210,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/account': {
+      id: '/account'
+      path: '/account'
+      fullPath: '/account'
+      preLoaderRoute: typeof AccountRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/accessories': {
       id: '/accessories'
       path: '/accessories'
@@ -219,6 +259,8 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AccessoriesRoute: AccessoriesRoute,
+  AccountRoute: AccountRoute,
+  AuthRoute: AuthRoute,
   BlogRoute: BlogRoute,
   CatalogRoute: CatalogRoute,
   ContactRoute: ContactRoute,
@@ -229,12 +271,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-  }
-}
