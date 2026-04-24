@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ShoppingBag, Search, User, Phone, Menu, X, Heart } from "lucide-react";
 import { useState } from "react";
 import { useCart } from "@/contexts/CartContext";
+import { useAuth } from "@/contexts/AuthContext";
 
 const navLinks = [
   { to: "/catalog", label: "Shop All" },
@@ -15,6 +16,7 @@ const navLinks = [
 
 export function Header({ variant = "solid" }: { variant?: "overlay" | "solid" }) {
   const { count, setOpen } = useCart();
+  const { user } = useAuth();
   const [mobileOpen, setMobileOpen] = useState(false);
   void variant;
 
@@ -32,7 +34,11 @@ export function Header({ variant = "solid" }: { variant?: "overlay" | "solid" })
             <span className="hidden lg:inline">Free delivery in Lagos on orders over ₦50,000</span>
             <a href="#" className="hover:text-cream transition-colors">Track Order</a>
             <a href="#" className="hover:text-cream transition-colors">Help</a>
-            <a href="#" className="hover:text-cream transition-colors">Sign In</a>
+            {user ? (
+              <Link to="/account" className="hover:text-cream transition-colors">My Account</Link>
+            ) : (
+              <Link to="/auth" search={{ redirect: "/", mode: "signin" }} className="hover:text-cream transition-colors">Sign In</Link>
+            )}
           </div>
         </div>
       </div>
@@ -72,13 +78,14 @@ export function Header({ variant = "solid" }: { variant?: "overlay" | "solid" })
 
           {/* Account & Cart */}
           <div className="flex-1 flex items-center justify-end gap-1">
-            <button
-              type="button"
+            <Link
+              to={user ? "/account" : "/auth"}
+              search={user ? undefined : { redirect: "/", mode: "signin" as const }}
               className="hidden sm:flex h-10 w-10 rounded-full items-center justify-center text-ink hover:bg-cream-soft"
-              aria-label="Account"
+              aria-label={user ? "My account" : "Sign in"}
             >
               <User className="h-5 w-5" />
-            </button>
+            </Link>
             <button
               type="button"
               className="hidden sm:flex h-10 w-10 rounded-full items-center justify-center text-ink hover:bg-cream-soft"
