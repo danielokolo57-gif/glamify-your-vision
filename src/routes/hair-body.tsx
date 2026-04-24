@@ -7,9 +7,9 @@ import { products } from "@/lib/products";
 export const Route = createFileRoute("/hair-body")({
   head: () => ({
     meta: [
-      { title: "Hair & Body — Sage" },
-      { name: "description", content: "Soft, nourishing care for your body and hair." },
-      { property: "og:title", content: "Hair & Body — Sage" },
+      { title: "Hair & Body — Lumière Beauty Nigeria" },
+      { name: "description", content: "Soft, nourishing care for your body and hair — formulated for Nigerian climates." },
+      { property: "og:title", content: "Hair & Body — Lumière Beauty Nigeria" },
       { property: "og:description", content: "Soft, nourishing care for your body and hair." },
     ],
   }),
