@@ -140,9 +140,9 @@ export function Header({ variant = "solid" }: { variant?: "overlay" | "solid" })
               <Search className="h-4 w-4 text-wine mr-2" />
             </div>
             <nav className="flex flex-col">
-              {navLinks.map((link, i) => (
+              {navLinks.map((link) => (
                 <Link
-                  key={`m-${link.label}-${i}`}
+                  key={`m-${link.to}`}
                   to={link.to}
                   onClick={() => setMobileOpen(false)}
                   className="px-4 py-3 rounded-lg text-ink/85 hover:bg-cream-soft transition-colors"
