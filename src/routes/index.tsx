@@ -52,10 +52,10 @@ function HomePage() {
 
   const tabProducts =
     activeTab === "New Arrivals"
-      ? products.slice(0, 6)
+      ? products.slice(0, 8)
       : activeTab === "Bestseller"
-      ? products.slice(6, 12)
-      : [...products].reverse().slice(0, 6);
+      ? products.slice(4, 12)
+      : [...products].reverse().slice(0, 8);
 
   return (
     <div className="min-h-screen bg-background">
