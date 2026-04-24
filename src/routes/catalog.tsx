@@ -65,7 +65,7 @@ function CatalogPage() {
             ))}
           </div>
 
-          <div className="mt-12 grid gap-x-6 gap-y-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-x-4 gap-y-8 sm:gap-x-6 sm:gap-y-12 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {filtered.map((p) => (
               <ProductCard key={p.id} product={p} />
             ))}
