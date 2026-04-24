@@ -7,13 +7,13 @@ import jar from "@/assets/cat-facecream.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Sage — A new philosophy of selfcare" },
+      { title: "About Lumière Beauty — A new philosophy of selfcare" },
       {
         name: "description",
         content:
-          "Learn about Sage's approach to conscious skincare — thoughtful ingredients, soft textures, and a calm, minimal philosophy.",
+          "Learn about Lumière Beauty's approach to conscious skincare — thoughtful ingredients, soft textures, and a calm, minimal philosophy.",
       },
-      { property: "og:title", content: "About Sage — A new philosophy of selfcare" },
+      { property: "og:title", content: "About Lumière Beauty — A new philosophy of selfcare" },
       {
         property: "og:description",
         content: "Conscious simplicity. Effective formulas. Real everyday care.",
@@ -34,7 +34,7 @@ function AboutPage() {
             A calm philosophy<br />of selfcare.
           </h1>
           <p className="mt-8 max-w-2xl text-lg text-foreground/75 leading-relaxed">
-            Sage was born from a simple idea: skincare should feel honest. We
+            Lumière Beauty was born from a simple idea: skincare should feel honest. We
             create thoughtful formulas with carefully chosen ingredients,
             beautiful textures, and packaging that respects the planet.
           </p>
@@ -43,7 +43,7 @@ function AboutPage() {
         <section className="bg-accent/40">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid gap-12 lg:grid-cols-2 lg:items-center">
             <div className="rounded-3xl overflow-hidden aspect-square bg-secondary">
-              <img src={jar} alt="Sage product" className="h-full w-full object-contain" />
+              <img src={jar} alt="Lumière Beauty product" className="h-full w-full object-contain" />
             </div>
             <div className="space-y-8">
               {[

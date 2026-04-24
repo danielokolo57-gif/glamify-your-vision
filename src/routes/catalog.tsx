@@ -16,10 +16,10 @@ const categories = [
 export const Route = createFileRoute("/catalog")({
   head: () => ({
     meta: [
-      { title: "Catalog — Sage" },
-      { name: "description", content: "Browse the complete Sage skincare and body care catalog." },
-      { property: "og:title", content: "Catalog — Sage" },
-      { property: "og:description", content: "Browse the complete Sage skincare and body care catalog." },
+      { title: "Catalog — Lumière Beauty Nigeria" },
+      { name: "description", content: "Browse the complete Lumière Beauty catalog — premium skincare, hair, body and accessories with delivery across Nigeria." },
+      { property: "og:title", content: "Catalog — Lumière Beauty Nigeria" },
+      { property: "og:description", content: "Browse the complete Lumière Beauty catalog — premium skincare, hair, body and accessories." },
     ],
   }),
   component: CatalogPage,
@@ -65,7 +65,7 @@ function CatalogPage() {
             ))}
           </div>
 
-          <div className="mt-12 grid gap-x-6 gap-y-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-x-4 gap-y-8 sm:gap-x-6 sm:gap-y-12 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {filtered.map((p) => (
               <ProductCard key={p.id} product={p} />
             ))}

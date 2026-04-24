@@ -7,9 +7,9 @@ import { products } from "@/lib/products";
 export const Route = createFileRoute("/hair-body")({
   head: () => ({
     meta: [
-      { title: "Hair & Body — Sage" },
-      { name: "description", content: "Soft, nourishing care for your body and hair." },
-      { property: "og:title", content: "Hair & Body — Sage" },
+      { title: "Hair & Body — Lumière Beauty Nigeria" },
+      { name: "description", content: "Soft, nourishing care for your body and hair — formulated for Nigerian climates." },
+      { property: "og:title", content: "Hair & Body — Lumière Beauty Nigeria" },
       { property: "og:description", content: "Soft, nourishing care for your body and hair." },
     ],
   }),
@@ -31,7 +31,7 @@ function HairBodyPage() {
           {items.length === 0 ? (
             <p className="mt-16 text-foreground/60">New launches coming soon.</p>
           ) : (
-            <div className="mt-12 grid gap-x-6 gap-y-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-12 grid gap-x-4 gap-y-8 sm:gap-x-6 sm:gap-y-12 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               {items.map((p) => (
                 <ProductCard key={p.id} product={p} />
               ))}

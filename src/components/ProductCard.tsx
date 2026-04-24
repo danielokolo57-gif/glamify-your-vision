@@ -34,7 +34,7 @@ export function ProductCard({ product }: { product: Product }) {
             e.preventDefault();
             add(product.id);
           }}
-          className="absolute bottom-3 right-3 h-10 w-10 rounded-full bg-wine text-cream flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all"
+          className="absolute bottom-3 right-3 h-10 w-10 rounded-full bg-wine text-cream flex items-center justify-center shadow-md transition-all sm:opacity-0 sm:translate-y-2 sm:group-hover:opacity-100 sm:group-hover:translate-y-0 hover:bg-wine-dark"
           aria-label={`Add ${product.name} to cart`}
         >
           <ShoppingBag className="h-4 w-4" />

@@ -6,9 +6,9 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/accessories")({
   head: () => ({
     meta: [
-      { title: "Accessories — Sage" },
+      { title: "Accessories — Lumière Beauty Nigeria" },
       { name: "description", content: "Tools and accessories to complement your daily ritual." },
-      { property: "og:title", content: "Accessories — Sage" },
+      { property: "og:title", content: "Accessories — Lumière Beauty Nigeria" },
       { property: "og:description", content: "Tools and accessories to complement your daily ritual." },
     ],
   }),

@@ -4,13 +4,13 @@ import { useState } from "react";
 import { useCart } from "@/contexts/CartContext";
 
 const navLinks = [
-  { to: "/skincare", label: "Hair Cream" },
-  { to: "/catalog", label: "Face Primer" },
-  { to: "/accessories", label: "Makeup Brushes" },
-  { to: "/hair-body", label: "Perfumes" },
-  { to: "/skincare", label: "Skincare Cream" },
-  { to: "/catalog", label: "Makeup Lipstick" },
-  { to: "/about", label: "More" },
+  { to: "/catalog", label: "Shop All" },
+  { to: "/skincare", label: "Skincare" },
+  { to: "/hair-body", label: "Hair & Body" },
+  { to: "/accessories", label: "Accessories" },
+  { to: "/blog", label: "Journal" },
+  { to: "/about", label: "About" },
+  { to: "/contact", label: "Contact" },
 ] as const;
 
 export function Header({ variant = "solid" }: { variant?: "overlay" | "solid" }) {
@@ -113,9 +113,9 @@ export function Header({ variant = "solid" }: { variant?: "overlay" | "solid" })
       {/* Category nav */}
       <nav className="hidden lg:block border-b border-border/60 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-12 flex items-center justify-center gap-10">
-          {navLinks.map((link, i) => (
+          {navLinks.map((link) => (
             <Link
-              key={`${link.label}-${i}`}
+              key={link.to}
               to={link.to}
               className="text-sm text-ink/85 hover:text-wine transition-colors relative group"
               activeProps={{ className: "text-wine font-medium" }}
@@ -140,9 +140,9 @@ export function Header({ variant = "solid" }: { variant?: "overlay" | "solid" })
               <Search className="h-4 w-4 text-wine mr-2" />
             </div>
             <nav className="flex flex-col">
-              {navLinks.map((link, i) => (
+              {navLinks.map((link) => (
                 <Link
-                  key={`m-${link.label}-${i}`}
+                  key={`m-${link.to}`}
                   to={link.to}
                   onClick={() => setMobileOpen(false)}
                   className="px-4 py-3 rounded-lg text-ink/85 hover:bg-cream-soft transition-colors"
