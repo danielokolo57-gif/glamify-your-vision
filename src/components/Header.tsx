@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ShoppingBag, Search, User, Phone, Menu, X, Heart } from "lucide-react";
 import { useState } from "react";
 import { useCart } from "@/contexts/CartContext";
+import { useAuth } from "@/contexts/AuthContext";
 
 const navLinks = [
   { to: "/catalog", label: "Shop All" },
@@ -15,6 +16,7 @@ const navLinks = [
 
 export function Header({ variant = "solid" }: { variant?: "overlay" | "solid" }) {
   const { count, setOpen } = useCart();
+  const { user } = useAuth();
   const [mobileOpen, setMobileOpen] = useState(false);
   void variant;
 
