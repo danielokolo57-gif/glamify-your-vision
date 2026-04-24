@@ -7,13 +7,13 @@ import jar from "@/assets/cat-facecream.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Sage — A new philosophy of selfcare" },
+      { title: "About Lumière Beauty — A new philosophy of selfcare" },
       {
         name: "description",
         content:
-          "Learn about Sage's approach to conscious skincare — thoughtful ingredients, soft textures, and a calm, minimal philosophy.",
+          "Learn about Lumière Beauty's approach to conscious skincare — thoughtful ingredients, soft textures, and a calm, minimal philosophy.",
       },
-      { property: "og:title", content: "About Sage — A new philosophy of selfcare" },
+      { property: "og:title", content: "About Lumière Beauty — A new philosophy of selfcare" },
       {
         property: "og:description",
         content: "Conscious simplicity. Effective formulas. Real everyday care.",
