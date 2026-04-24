@@ -32,9 +32,9 @@ const posts = [
 export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
-      { title: "Journal — Sage" },
+      { title: "Journal — Lumière Beauty Nigeria" },
       { name: "description", content: "Notes on skincare, ingredients and quiet rituals." },
-      { property: "og:title", content: "Journal — Sage" },
+      { property: "og:title", content: "Journal — Lumière Beauty Nigeria" },
       { property: "og:description", content: "Notes on skincare, ingredients and quiet rituals." },
     ],
   }),
