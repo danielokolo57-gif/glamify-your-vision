@@ -34,7 +34,7 @@ function AboutPage() {
             A calm philosophy<br />of selfcare.
           </h1>
           <p className="mt-8 max-w-2xl text-lg text-foreground/75 leading-relaxed">
-            Sage was born from a simple idea: skincare should feel honest. We
+            Lumière Beauty was born from a simple idea: skincare should feel honest. We
             create thoughtful formulas with carefully chosen ingredients,
             beautiful textures, and packaging that respects the planet.
           </p>
