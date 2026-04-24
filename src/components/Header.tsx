@@ -113,9 +113,9 @@ export function Header({ variant = "solid" }: { variant?: "overlay" | "solid" })
       {/* Category nav */}
       <nav className="hidden lg:block border-b border-border/60 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-12 flex items-center justify-center gap-10">
-          {navLinks.map((link, i) => (
+          {navLinks.map((link) => (
             <Link
-              key={`${link.label}-${i}`}
+              key={link.to}
               to={link.to}
               className="text-sm text-ink/85 hover:text-wine transition-colors relative group"
               activeProps={{ className: "text-wine font-medium" }}
