@@ -43,7 +43,7 @@ function AboutPage() {
         <section className="bg-accent/40">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid gap-12 lg:grid-cols-2 lg:items-center">
             <div className="rounded-3xl overflow-hidden aspect-square bg-secondary">
-              <img src={jar} alt="Sage product" className="h-full w-full object-contain" />
+              <img src={jar} alt="Lumière Beauty product" className="h-full w-full object-contain" />
             </div>
             <div className="space-y-8">
               {[
