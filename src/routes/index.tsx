@@ -173,8 +173,8 @@ function HomePage() {
                 key={b.title}
                 className="relative rounded-2xl overflow-hidden bg-cream"
               >
-                <div className="grid grid-cols-2 items-center min-h-[220px]">
-                  <div className="px-6 sm:px-10 py-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 items-center min-h-[220px]">
+                  <div className="px-6 sm:px-10 py-8 order-2 sm:order-1">
                     <p className="text-sm text-ink/70">{b.discount}</p>
                     <h3 className="mt-1 font-display text-2xl sm:text-3xl lg:text-4xl text-ink leading-tight">
                       {b.title}<br />{b.title2}
@@ -186,7 +186,7 @@ function HomePage() {
                       Shop Now
                     </Link>
                   </div>
-                  <div className="relative h-full min-h-[220px]">
+                  <div className="relative h-full min-h-[220px] order-1 sm:order-2">
                     <img
                       src={b.img}
                       alt={b.title}
