@@ -4,13 +4,13 @@ import { useState } from "react";
 import { useCart } from "@/contexts/CartContext";
 
 const navLinks = [
-  { to: "/skincare", label: "Hair Cream" },
-  { to: "/catalog", label: "Face Primer" },
-  { to: "/accessories", label: "Makeup Brushes" },
-  { to: "/hair-body", label: "Perfumes" },
-  { to: "/skincare", label: "Skincare Cream" },
-  { to: "/catalog", label: "Makeup Lipstick" },
-  { to: "/about", label: "More" },
+  { to: "/catalog", label: "Shop All" },
+  { to: "/skincare", label: "Skincare" },
+  { to: "/hair-body", label: "Hair & Body" },
+  { to: "/accessories", label: "Accessories" },
+  { to: "/blog", label: "Journal" },
+  { to: "/about", label: "About" },
+  { to: "/contact", label: "Contact" },
 ] as const;
 
 export function Header({ variant = "solid" }: { variant?: "overlay" | "solid" }) {
